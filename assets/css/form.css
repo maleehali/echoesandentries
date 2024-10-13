@@ -1,0 +1,150 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Consistent box sizing across elements */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents accidental scrolling */
+}
+
+/* Fixed header with centered title and bottom border */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 2px solid #000;
+    z-index: 10; /* Ensures the header stays above other elements */
+}
+
+/* Main container with two equal panels */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 60px; /* Adds space for the fixed header */
+    background-color: #fff;
+}
+
+/* Left panel styling, containing a circular element */
+.left-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-right: 2px solid #000;
+}
+
+/* Circular element with a gradient background */
+.circle {
+    width: 70%;
+    max-width: 400px;
+    height: 70%;
+    max-height: 400px;
+    background: radial-gradient(circle, pink,#CCCCFF );
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Right panel containing form elements */
+.right-panel {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form title styling */
+.right-panel h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form styling for layout and spacing */
+form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form labels */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input and textarea styling with padding and borders */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit button styling with hover effect */
+button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    /* Stack panels vertically on smaller screens */
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    /* Full-width panels with bottom border */
+    .left-panel, .right-panel {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #000;
+    }
+    
+    /* Smaller circle size for mobile view */
+    .circle {
+        width: 60%;
+        max-width: 300px;
+        height: auto;
+    }
+    
+    /* Reduced font size for header on smaller screens */
+    header {
+        font-size: 20px;
+    }
+}
